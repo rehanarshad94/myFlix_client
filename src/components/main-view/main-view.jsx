@@ -17,17 +17,17 @@ export class MainView extends React.Component {
             { _id: 1, 
                 Title: 'Inception', 
                 Description: 'The film stars Leonardo DiCaprio as a professional thief who steals information by infiltrating the subconscious of his targets. He is offered a chance to have his criminal history erased as payment for the implantation of another person\'s idea into a target\'s subconscious.', 
-                ImagePath: 'https://irs.www.warnerbros.com/gallery-v2-jpeg/inception_posterlarge_0-587516945.jpg'
+                ImagePath: 'https://c8.alamy.com/compes/2c4x05r/inception-2010-dirigida-por-christopher-nolan-y-protagonizada-por-leonardo-dicaprio-joseph-gordon-levitt-ellen-page-tom-hardy-y-ken-watanabe-un-equipo-irnante-al-subconsciente-de-un-hombre-de-negocios-utilizando-la-tecnologia-de-compartir-suenos-para-una-planta-una-semilla-para-influir-en-su-decision-en-el-mundo-real-2c4x05r.jpg'
             },
             { _id: 2, 
                 Title: 'The Shawshank Redemption',
                  Description: 'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency. Chronicles the experiences of a formerly successful banker as a prisoner in the gloomy jailhouse of Shawshank after being found guilty of a crime he did not commit.', 
-                 ImagePath: 'https://irs.www.warnerbros.com/gallery-v2-jpeg/the_shawshank_redemption_posterlarge_0-675188670.jpg'
+                 ImagePath: 'https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UX1000_.jpg'
                 },
             { _id: 3, 
                 Title: 'Gladiator', 
                 Description: 'A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery. Maximus is a powerful Roman general, loved by the people and the aging Emperor, Marcus Aurelius.', 
-                ImagePath: 'https://upload.wikimedia.org/wikipedia/en/f/fb/Gladiator_%282000_film_poster%29.png'
+                ImagePath: 'https://upload.wikimedia.org/wikipedia/en/f/fb/Gladiator_(2000_film_poster).png'
             },
           ]
         }
