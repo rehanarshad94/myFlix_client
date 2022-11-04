@@ -11,7 +11,7 @@ export function RegistrationView(props) {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(username, password, email, birthday);
-        props.Registration(username);
+        props.onRegister(username);
     }
 
 
@@ -38,13 +38,13 @@ export function RegistrationView(props) {
     );
 }
 
-// RegistrationView.propTypes = {
-//     registration: PropTypes.shape({
-//       Username: PropTypes.string.isRequired,
-//       Password: PropTypes.string.isRequired,
-//       Email: PropTypes.string.isRequired,
-//       Birthday: PropTypes.number
-//     }).isRequired,
-//     onRegistrationClick: PropTypes.func.isRequired
-//   };
+RegistrationView.propTypes = {
+    registration: PropTypes.shape({
+      Username: PropTypes.string.isRequired,
+      Password: PropTypes.string.isRequired,
+      Email: PropTypes.string.isRequired,
+      Birthday: PropTypes.number
+    }).isRequired,
+    onRegistrationClick: PropTypes.func.isRequired
+  };
 

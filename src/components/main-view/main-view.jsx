@@ -48,6 +48,7 @@ export class MainView extends React.Component {
           user
         })
       }
+
     
       render() {
         const { movies, selectedMovie, user } = this.state;
