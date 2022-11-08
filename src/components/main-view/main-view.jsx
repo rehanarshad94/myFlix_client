@@ -3,11 +3,8 @@ import React from "react";
 import axios from "axios";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
-<<<<<<< Updated upstream
-=======
 import PropTypes from "prop-types"
 import { Row, Col } from "react-bootstrap/"
->>>>>>> Stashed changes
 
 
 // React.Component is a template or blueprint for creating a component
@@ -47,20 +44,6 @@ export class MainView extends React.Component {
       
         if (movies.length === 0) return <div className="main-view" />;
       
-<<<<<<< Updated upstream
-        return (
-          <div className="main-view">
-            {selectedMovie
-              ? <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
-              : movies.map(movie => (
-                <MovieCard key={movie._id} movie={movie} onMovieClick={(movie) => { this.setSelectedMovie(movie) }}/>
-              ))
-            }
-          </div>
-        );
-      }
-    }
-=======
       return (
         <Row className="main-view justify-content-md-center">
           {selectedMovie
@@ -84,4 +67,3 @@ export class MainView extends React.Component {
 MainView.propTypes = {
     onLoggedIn: PropTypes.func.isRequired,
   };
->>>>>>> Stashed changes

@@ -1,9 +1,6 @@
 import React from 'react';
-<<<<<<< Updated upstream
-=======
 import PropTypes from "prop-types";
 import Button from "react-bootstrap/Button";
->>>>>>> Stashed changes
 
 export class MovieView extends React.Component {
 
@@ -23,9 +20,6 @@ export class MovieView extends React.Component {
             <span className="label">Description: </span>
             <span className="value">{movie.Description}</span>
           </div>
-<<<<<<< Updated upstream
-          <button onClick={() => { onBackClick(null); }}>Back</button>
-=======
           <br />
           <div className="movie-genre-description">
             <span className="label">Genre Description: </span>
@@ -53,7 +47,6 @@ export class MovieView extends React.Component {
           </div>
           <br />
           <Button onClick={() => { onBackClick(null); }}>Back</Button>
->>>>>>> Stashed changes
        </div>
     );
   }
