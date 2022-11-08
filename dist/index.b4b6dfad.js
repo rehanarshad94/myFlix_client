@@ -27051,7 +27051,7 @@ MainView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"fD7H8","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"fDiVC","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","axios":"jo6P5","prop-types":"7wKI2","../login-view/login-view":"9YtA0","../registration-view/registration-view":"3U8r7","react-bootstrap/":"3AD9A"}],"fD7H8":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"fD7H8","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"fDiVC","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","axios":"jo6P5","../login-view/login-view":"9YtA0","../registration-view/registration-view":"3U8r7","prop-types":"7wKI2","react-bootstrap/":"3AD9A"}],"fD7H8":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -34798,7 +34798,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"fD7H8","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"fDiVC","react-bootstrap/":"3AD9A"}],"3U8r7":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","react-bootstrap/":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"fD7H8","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"fDiVC"}],"3U8r7":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$789c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -35018,6 +35018,6 @@ $RefreshReg$(_c, "RegistrationView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"fD7H8","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"fDiVC","react-bootstrap":"3AD9A"}],"lJZlQ":[function() {},{}]},["dAPVv","gWjqn","d8Dch"], "d8Dch", "parcelRequire2fd1")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"fD7H8","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"fDiVC"}],"lJZlQ":[function() {},{}]},["dAPVv","gWjqn","d8Dch"], "d8Dch", "parcelRequire2fd1")
 
 //# sourceMappingURL=index.b4b6dfad.js.map
