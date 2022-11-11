@@ -55,16 +55,6 @@ export class MovieView extends React.Component {
             <span className="value">{movie.Director.Bio}</span>
           </div>
           <br />
-          <div className="movie-director-birth">
-            <span className="label">Director Birth: </span>
-            <span className="value">{movie.Director.Birth}</span>
-          </div>
-          <br />
-          <div className="movie-director-death">
-            <span className="label">Director Death: </span>
-            <span className="value">{movie.Director.Death}</span>
-          </div>
-          <br />
           <Button onClick={() => { onBackClick(null); }}>Back</Button>
        </div>
     );
@@ -83,8 +73,6 @@ MovieView.propTypes = {
     Director: PropTypes.shape({
       Name: PropTypes.string.isRequired,
       Bio: PropTypes.string.isRequired,
-      Birth: PropTypes.number.isRequired,
-      Death: PropTypes.number.isRequired
     }),
     ImagePath: PropTypes.string.isRequired
   }).isRequired,

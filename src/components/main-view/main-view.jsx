@@ -5,7 +5,6 @@ import { LoginView } from "../login-view/login-view";
 import { RegistrationView } from "../registration-view/registration-view";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
-import PropTypes from "prop-types"
 import { Row, Col } from "react-bootstrap/"
 
 
@@ -80,6 +79,3 @@ export class MainView extends React.Component {
     }
 
 
-MainView.propTypes = {
-    onLoggedIn: PropTypes.func.isRequired,
-  };

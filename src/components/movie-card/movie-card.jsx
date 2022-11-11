@@ -7,8 +7,8 @@ export class MovieCard extends React.Component {
     const { movie, onMovieClick } = this.props;
 
     return (
-      <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={movie.ImagePath} />
+      <Card style={{ width: '15rem', margin: '1rem'}}>
+        <Card.Img variant="top" src={movie.ImagePath} crossOrigin="true" />
           <Card.Body>
             <Card.Title>{movie.Title}</Card.Title>
             <Card.Text>{movie.Description}</Card.Text>
@@ -33,8 +33,6 @@ MovieCard.propTypes = {
     Director: PropTypes.shape({
       Name: PropTypes.string.isRequired,
       Bio: PropTypes.string.isRequired,
-      Birth: PropTypes.number.isRequired,
-      Death: PropTypes.number.isRequired
     }),
     ImagePath: PropTypes.string.isRequired
   }).isRequired,
