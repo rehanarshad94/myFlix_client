@@ -18,7 +18,8 @@ export function LoginView(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     /* Send a request to the server for authentication */
-    axios.post('https://my-movie-flix.herokuapp.com/login', {
+    /* had to add /login?Username=rehanarshd94&Password=password1234 to make connection work; did not work with /login*/
+    axios.post('https://my-movie-flix.herokuapp.com/login?Username=rehanarshad94&Password=password1234', {
       Username: username,
       Password: password
     })
@@ -30,6 +31,8 @@ export function LoginView(props) {
       console.log('no such user')
     });
   };
+
+
 
   return (
     <Container>
@@ -56,6 +59,7 @@ export function LoginView(props) {
                     </Button>
 
                     <Button type="submit">Register</Button>
+                    
 
                   </Form>
                 
