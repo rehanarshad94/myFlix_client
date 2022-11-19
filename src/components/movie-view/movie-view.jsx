@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from "prop-types";
 import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom"
 
 export class MovieView extends React.Component {
 
@@ -54,15 +55,15 @@ export class MovieView extends React.Component {
             <span className="label">Director Bio: </span>
             <span className="value">{movie.Director.Bio}</span>
           </div>
-          <Link to={`/directors/${movie.Director.Name}`}>
+          <br />
+          <Button onClick={() => { onBackClick; }}>Back</Button>
+          <Link to={`/movies/directors/:Name${movie.Director.Name}`}>
           <Button variant="link">Director</Button>
           </Link>
 
           <Link to={`/genres/${movie.Genre.Name}`}>
           <Button variant="link">Genre</Button>
           </Link>
-          <br />
-          <Button onClick={() => { onBackClick(null); }}>Back</Button>
        </div>
     );
   }

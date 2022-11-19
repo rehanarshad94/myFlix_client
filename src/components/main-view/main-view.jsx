@@ -6,7 +6,9 @@ import { RegistrationView } from "../registration-view/registration-view";
 import { BrowserRouter as Router, Route } from "react-router-dom"
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
-import { Row, Col } from "react-bootstrap/"
+import { Row, Col, Container } from "react-bootstrap/";
+import { Menubar } from "../navbar-view/navbar";
+import { DirectorView } from "../director-view/director-view";
 
 
 // React.Component is a template or blueprint for creating a component
@@ -96,36 +98,56 @@ export class MainView extends React.Component {
           </Col>
         </Row>
         if (movies.length === 0) return <div className="main-view" />;
+
     
         return (
             <Router>
+              <Menubar user={user} />
+              <Container>
               <Row className="main-view justify-content-md-center">
                 <Route exact path="/" render={() => {
+                  if (!user) return 
+                  <Col>
+                  <LoginView movies={movies} onLoggedIn={user => this.onLoggedIn(user)} />
+                  </Col>
+                  if (movies.length === 0) return <div className="main-view" />
                   return movies.map(m => (
                     <Col md={3} key={m._id}>
                       <MovieCard movie={m} />
                     </Col>
                   ))
                 }} />
-                <Route path="/movies/:Title" render={({ match }) => {
-                  return <Col md={8}>
-                    <MovieView movie={movies.find(m => m._id === match.params.movieId)} />
+                <Route path="/register" render={() => {
+                  if (user) return <Redirect to="/" />
+                  return <Col lg={8} md={8}>
+                    <RegistrationView />
                   </Col>
                 }} />
-                <Route path="/directors/:name" render={({ match, history }) => {
-                  if (movies.length === 0) return <div className="main-view" />;
+                <Route path="/movies/:Title" render={({ match, history}) => {
                   return <Col md={8}>
-                  <DirectorView director={movies.find(m => m.Director.Name === match.params.name).Director} onBackClick={() => history.goBack()} />
-                 </Col>
-                }}/>
-                <Route path="/movies/genres/:Name" render={({ match, history }) => {
-                  if (movies.length === 0) return <div className="main-view" />;
-                  return <Col md={8}>
-                  <DirectorView director={movies.find(m => m.genre.Name === match.params.name).Director} onBackClick={() => history.goBack()} />
-                 </Col>
-                }}/>
-      
-              </Row>
+                    <MovieView movie={movies.find(m => m._id === match.params.id)} onBackClick={() => history.goBack()} />
+                  </Col>
+                }} />
+                <Route path="/movies/directors/:Name" render={({ match, history}) => {
+                  return <Col>
+                    <DirectorView movie={movies.find(m => m._id === match.params.id)} onBackClick={() => history.goBack()} />
+                  </Col>
+                }} />
+                <Route path={"/users"} render={({ match, history}) => {
+                  if (!user) return <Redirect to="/" />
+                   return <Col>
+                  <ProfileView movies={movies} user={user} onBackClick={() => history.goBack()}/>
+                  </Col>
+                }} />
+                <Route path={"/users/:Username"} render={({ match, history}) => {
+                  if (!user) return <Redirect to="/" />
+                   return <Col>
+                  <userUpdate user={user} onBackClick={() => history.goBack()}/>
+                  </Col>
+                }} />
+                
+                </Row>
+              </Container>
             </Router>
         );
       }
