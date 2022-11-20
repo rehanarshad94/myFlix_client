@@ -9,6 +9,7 @@ import { MovieView } from "../movie-view/movie-view";
 import { Row, Col, Container } from "react-bootstrap/";
 import { Menubar } from "../navbar-view/navbar";
 import { DirectorView } from "../director-view/director-view";
+import { GenreView } from "../genre-view/genre-view";
 
 
 // React.Component is a template or blueprint for creating a component
@@ -131,6 +132,11 @@ export class MainView extends React.Component {
                 <Route path="/movies/directors/:Name" render={({ match, history}) => {
                   return <Col>
                     <DirectorView movie={movies.find(m => m._id === match.params.id)} onBackClick={() => history.goBack()} />
+                  </Col>
+                }} />
+                <Route path="/movies/genres/:Name" render={({ match, history}) => {
+                  return <Col>
+                    <GenreView movie={movies.find(m => m._id === match.params.id)} onBackClick={() => history.goBack()} />
                   </Col>
                 }} />
                 <Route path={"/users"} render={({ match, history}) => {

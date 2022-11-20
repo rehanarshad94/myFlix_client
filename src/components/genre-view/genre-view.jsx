@@ -1,24 +1,28 @@
 import React from "react";
 import Proptypes from "prop-types";
-import { Card } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export class GenreView extends React.Component {
     render() {
-        const { Genre, movie } = this.props
+        const { movie, onBackClick } = this.props
 
         return (
             <Card>
                <Card.Header>Genre</Card.Header>
-               <Card.Body>{movie.genre.Name}</Card.Body>
-               <Link to={`/movies/genres/:Name`}></Link>
+               <Card.Body>{movie.Genre.Name}</Card.Body>
+               <Card.Body>{movie.Genre.Description}</Card.Body>
+               <Link to={`/movies/genres/:Name${movie._id}`}>
+               <Button onClick={()=> { onBackClick(null); }}>exit</Button>
+               </Link>
             </Card>
         )
     }
 }
 
 GenreView.proptypes = {
-    Genre: Proptypes.shape({
+    genre: Proptypes.shape({
         Name: Proptypes.string.isRequired,
-        Description: Proptypes.string.isRequired
-    }).isRequired
+        Description: Proptypes.string.isRequired,
+    })
 }
