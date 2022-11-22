@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 export class MovieCard extends React.Component {
   render() {
     const { movie } = this.props;
-
+    console.log("hello");
+    debugger
     return (
       <Card style={{ width: '15rem', margin: '1rem'}}>
         <Card.Img variant="top" src={movie.ImagePath} crossOrigin="true" />
@@ -27,6 +28,7 @@ export class MovieCard extends React.Component {
 
 MovieCard.propTypes = {
   movie: PropTypes.shape({
+    ID: PropTypes.number.isRequired,
     Title: PropTypes.string.isRequired,
     Description: PropTypes.string.isRequired,
     ImagePath: PropTypes.string.isRequired,

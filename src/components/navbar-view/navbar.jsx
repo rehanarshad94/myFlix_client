@@ -27,7 +27,7 @@ return (
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="ml-auto">
                     {isAuth() && (
-                        <Nav.Link href={'/users/${user}'}>User</Nav.Link>
+                        <Nav.Link href={'/users/${user}'}>Profile</Nav.Link>
                     )}
                     {isAuth() && (
                         <Button variant="link" onClick={ () => {

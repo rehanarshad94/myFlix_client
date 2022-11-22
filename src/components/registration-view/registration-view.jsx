@@ -71,6 +71,23 @@ export function RegistrationView(props) {
         }
     };
 
+    const handleRegister = (e) => {
+        e.preventDefault();
+        axios.post('https://my-movie-flix.herokuapp.com/users', {
+            Username: username,
+            Password: password,
+            Email: email,
+            Birthday: birthday
+        })
+        .then(response => {
+            const data = response.data;
+            console.log(data);
+            window.open('/', '_self'); // the second argument '_self' is necessary so that the page will open in the current tab
+        })
+        .catch(e => {
+            console.log('error registering the user')
+        });
+    };
 
 
 
@@ -106,7 +123,7 @@ return (
 
                 <Form.Group controlID="updateBirthday">
                     <Form.Label>Birthday</Form.Label>
-                    <Form.Control type="data" name="birthday" onChange={(e) => setBirthday(e.target.value)} />
+                    <Form.Control type="date" name="birthday" onChange={(e) => setBirthday(e.target.value)} />
                 </Form.Group>
 
                 <Button variant="primary" type="submit" onClick={handleSubmit}>Submit</Button>

@@ -10,6 +10,8 @@ import { Row, Col, Container } from "react-bootstrap/";
 import { Menubar } from "../navbar-view/navbar";
 import { DirectorView } from "../director-view/director-view";
 import { GenreView } from "../genre-view/genre-view";
+import { Link } from "react-router-dom";
+
 
 
 // React.Component is a template or blueprint for creating a component
@@ -151,6 +153,7 @@ export class MainView extends React.Component {
                   <userUpdate user={user} onBackClick={() => history.goBack()}/>
                   </Col>
                 }} />
+                
                 
                 </Row>
               </Container>
