@@ -19,51 +19,53 @@ export class MovieView extends React.Component {
 
   render() {
     const { movie, onBackClick } = this.props;
-
+    console.log(movie);
     return (
-      <div className="movie-view">
-          <div className="movie-poster">
-            <img src={movie.ImagePath} crossOrigin="true" />
-          </div>
-          <br />
-          <div className="movie-title">
-            <span className="label">Title: </span>
-            <span className="value">{movie.Title}</span>
-          </div>
-          <br />
-          <div className="movie-description">
-            <span className="label">Description: </span>
-            <span className="value">{movie.Description}</span> 
-          </div>
-          <br />
-          <div className="movie-genre-name">
-            <span className="label">Genre: </span>
-            <span className="value">{movie.Genre.Name}</span>
-          </div>
-          <br />
-          <div className="movie-genre-description">
-            <span className="label">Genre Description: </span>
-            <span className="value">{movie.Genre.Description}</span>
-          </div>
-          <br />
-          <div className="movie-director-name">
-            <span className="label">Director Name: </span>
-            <span className="value">{movie.Director.Name}</span>
-          </div>
-          <br />
-          <div className="movie-director-bio">
-            <span className="label">Director Bio: </span>
-            <span className="value">{movie.Director.Bio}</span>
-          </div>
-          <br />
-          <Button onClick={()=> { onBackClick(null);}}>Back</Button>
-          <Link to={`/movies/directors/${movie.Director.Name}`}>
-          <Button variant="link">Director</Button>
-          </Link>
-          <Link to={`/movies/genres/${movie.Genre.Name}`}>
-          <Button variant="link">Genre</Button>
-          </Link>
-       </div>
+      <div></div>
+      // <div className="movie-view">
+      //     <div className="movie-poster">
+      //       {JSON.stringify(movie)}
+      //       {/* <img src={movie.ImagePath} crossOrigin="true" /> */}
+      //     </div>
+      //     <br />
+      //     <div className="movie-title">
+      //       <span className="label">Title: </span>
+      //       <span className="value">{movie.Title}</span>
+      //     </div>
+      //     <br />
+      //     <div className="movie-description">
+      //       <span className="label">Description: </span>
+      //       <span className="value">{movie.Description}</span> 
+      //     </div>
+      //     <br />
+      //     <div className="movie-genre-name">
+      //       <span className="label">Genre: </span>
+      //       <span className="value">{movie.Genre.Name}</span>
+      //     </div>
+      //     <br />
+      //     <div className="movie-genre-description">
+      //       <span className="label">Genre Description: </span>
+      //       <span className="value">{movie.Genre.Description}</span>
+      //     </div>
+      //     <br />
+      //     <div className="movie-director-name">
+      //       <span className="label">Director Name: </span>
+      //       <span className="value">{movie.Director.Name}</span>
+      //     </div>
+      //     <br />
+      //     <div className="movie-director-bio">
+      //       <span className="label">Director Bio: </span>
+      //       <span className="value">{movie.Director.Bio}</span>
+      //     </div>
+      //     <br />
+      //     <Button onClick={()=> { onBackClick(null);}}>Back</Button>
+      //     <Link to={`/movies/directors/${movie.Director.Name}`}>
+      //     <Button variant="link">Director</Button>
+      //     </Link>
+      //     <Link to={`/movies/genres/${movie.Genre.Name}`}>
+      //     <Button variant="link">Genre</Button>
+      //     </Link>
+      //  </div>
     );
   }
 }
