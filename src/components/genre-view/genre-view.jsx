@@ -12,9 +12,8 @@ export class GenreView extends React.Component {
                <Card.Header>Genre</Card.Header>
                <Card.Body>{movie.Genre.Name}</Card.Body>
                <Card.Body>{movie.Genre.Description}</Card.Body>
-               <Link to={`/movies/genres/:Name${movie._id}`}>
+               <Link to={`/movies/genres/:Name${movie._id}`} />
                <Button onClick={()=> { onBackClick(null); }}>exit</Button>
-               </Link>
             </Card>
         )
     }

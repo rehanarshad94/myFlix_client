@@ -10,7 +10,7 @@ import { Row, Col, Container } from "react-bootstrap/";
 import { Menubar } from "../navbar-view/navbar";
 import { DirectorView } from "../director-view/director-view";
 import { GenreView } from "../genre-view/genre-view";
-import { Link } from "react-router-dom";
+
 
 
 
@@ -126,28 +126,28 @@ export class MainView extends React.Component {
                     <RegistrationView />
                   </Col>
                 }} />
-                <Route path="/movies/:Title" render={({ match, history}) => {
+                <Route path="/movies/:id" render={({ match, history}) => {
                   return <Col md={8}>
-                    <MovieView movie={movies.find(m => m._id === match.params.id)} onBackClick={() => history.goBack()} />
+                    <MovieView movie={movies.find(m => m._id === Number(match.params.id))} onBackClick={() => history.goBack()} />
                   </Col>
                 }} />
-                <Route path="/movies/directors/:Name" render={({ match, history}) => {
+                <Route path="/directors/:name" render={({ match, history}) => {
                   return <Col>
                     <DirectorView movie={movies.find(m => m._id === match.params.id)} onBackClick={() => history.goBack()} />
                   </Col>
                 }} />
-                <Route path="/movies/genres/:Name" render={({ match, history}) => {
+                <Route path="/genres/:name" render={({ match, history}) => {
                   return <Col>
                     <GenreView movie={movies.find(m => m._id === match.params.id)} onBackClick={() => history.goBack()} />
                   </Col>
                 }} />
-                <Route path={"/users"} render={({ match, history}) => {
+                <Route path="/users" render={({ match, history}) => {
                   if (!user) return <Redirect to="/" />
                    return <Col>
                   <ProfileView movies={movies} user={user} onBackClick={() => history.goBack()}/>
                   </Col>
                 }} />
-                <Route path={"/users/:Username"} render={({ match, history}) => {
+                <Route path="/users/:Username" render={({ match, history}) => {
                   if (!user) return <Redirect to="/" />
                    return <Col>
                   <userUpdate user={user} onBackClick={() => history.goBack()}/>
