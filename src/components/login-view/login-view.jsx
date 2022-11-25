@@ -19,7 +19,7 @@ export function LoginView(props) {
     e.preventDefault();
     /* Send a request to the server for authentication */
     /* had to add /login?Username=rehanarshd94&Password=password1234 to make connection work; did not work with /login*/
-    axios.post('https://my-movie-flix.herokuapp.com/login?Username=rehanarshad94&Password=password1234', {
+    axios.post(`https://my-movie-flix.herokuapp.com/login?Username=${username}&Password=${password}`, {
       Username: username,
       Password: password
     })

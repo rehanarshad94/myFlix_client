@@ -5,16 +5,14 @@ import { Link } from "react-router-dom";
 
 export class DirectorView extends React.Component {
     render() {
-        const { movie, onBackClick } = this.props;
+        const { director, onBackClick } = this.props;
 
         return (
             <Card>
                <Card.Header>Director</Card.Header>
-               <Card.Body>{movie.Director.Name}</Card.Body>
-               <Card.Body>{movie.Director.Bio}</Card.Body>
-               <Link to={`/movies/directors/:Name${movie._id}`}>
-               <Button onClick={()=> { onBackClick(null); }}>exit</Button>
-               </Link>
+               <Card.Body>{director.Name}</Card.Body>
+               <Card.Body>{director.Bio}</Card.Body>
+               <Button onClick={()=> { onBackClick(null); }}>Exit</Button>
             </Card>
         )
     }
