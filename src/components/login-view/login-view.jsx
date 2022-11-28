@@ -39,7 +39,7 @@ export function LoginView(props) {
   return (
     <Container>
       <Row>
-        <Col>
+        <Col style={{marginTop: '20px'}}>
           <CardGroup>
             <Card>
               <Card.Title>LOGIN</Card.Title>
@@ -55,11 +55,13 @@ export function LoginView(props) {
                       <Form.Label>Password:</Form.Label>
                       <Form.Control type="password" placeholder='Enter Password' onChange={e => setPassword(e.target.value)} minLength='7' required />
                     </Form.Group>
+
+                    <br />
                   
                     <Button variant="primary" type="submit" onClick={handleSubmit}>
                       Submit
                     </Button>
-
+                    &nbsp;
                     <Button type="submit">Register</Button>
                     
 

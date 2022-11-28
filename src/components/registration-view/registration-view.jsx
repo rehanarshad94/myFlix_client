@@ -71,23 +71,23 @@ export function RegistrationView(props) {
         }
     };
 
-    const handleRegister = (e) => {
-        e.preventDefault();
-        axios.post('https://my-movie-flix.herokuapp.com/users', {
-            Username: username,
-            Password: password,
-            Email: email,
-            Birthday: birthday
-        })
-        .then(response => {
-            const data = response.data;
-            console.log(data);
-            window.open('/', '_self'); // the second argument '_self' is necessary so that the page will open in the current tab
-        })
-        .catch(e => {
-            console.log('error registering the user')
-        });
-    };
+    // const handleRegister = (e) => {
+    //     e.preventDefault();
+    //     axios.post('https://my-movie-flix.herokuapp.com/users', {
+    //         Username: username,
+    //         Password: password,
+    //         Email: email,
+    //         Birthday: birthday
+    //     })
+    //     .then(response => {
+    //         const data = response.data;
+    //         console.log(data);
+    //         window.open('/', '_self'); // the second argument '_self' is necessary so that the page will open in the current tab
+    //     })
+    //     .catch(e => {
+    //         console.log('error registering the user')
+    //     });
+    // };
 
 
 
@@ -97,38 +97,43 @@ return (
             <Form>
                 <h3>Sign Up</h3>
                 <p></p>
-                <Form.Group controlID="formUsername" className="reg-form-inputs">
-                    <Form.Label>Username:</Form.Label>
-                    <Form.Control type="text" value={username} onChange={e => setUsername(e.target.value)} />
-                    {values.usernameErr && <p>{values.usernameErr}</p>}
-                </Form.Group>
-
                 <Form.Group controlID="formName" className="reg-form-inputs">
                     <Form.Label>Name:</Form.Label>
                     <Form.Control type="text" value={name} onChange={e => setName(e.target.value)} />
                     {values.nameErr && <p>{values.nameErr}</p>}
                 </Form.Group>
+                <br />
+
+                <Form.Group controlID="formUsername" className="reg-form-inputs">
+                    <Form.Label>Username:</Form.Label>
+                    <Form.Control type="text" value={username} onChange={e => setUsername(e.target.value)} />
+                    {values.usernameErr && <p>{values.usernameErr}</p>}
+                </Form.Group>
+                <br />
 
                 <Form.Group controlID="formPassword" className="reg-form-inputs">
                     <Form.Label>Password:</Form.Label>
                     <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} />
                     {values.passwordErr && <p>{values.passwordErr}</p>}
                 </Form.Group>
+                <br />
 
                 <Form.Group controlID="formEmail" className="reg-form-inputs">
                     <Form.Label>Email:</Form.Label>
                     <Form.Control type="password" value={email} onChange={e => setEmail(e.target.value)} />
                     {values.emailErr && <p>{values.emailErr}</p>}
                 </Form.Group>
+                <br />
 
                 <Form.Group controlID="updateBirthday">
                     <Form.Label>Birthday</Form.Label>
                     <Form.Control type="date" name="birthday" onChange={(e) => setBirthday(e.target.value)} />
                 </Form.Group>
-
+                <br />
+                
                 <Button variant="primary" type="submit" onClick={handleSubmit}>Submit</Button>
                 <p></p>
-                <p>Already Registered <Link to={'/'}>Sign In</Link>here</p>
+                <p>Already Registered <Link to={'/'}>Sign In</Link> Here.</p>
             </Form>
         </Col>
     </Row>
