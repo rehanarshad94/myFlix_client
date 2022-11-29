@@ -19,7 +19,7 @@ export class MovieView extends React.Component {
   }
 
   render() {
-    const { movie, onBackClick } = this.props;
+    const { movie, onBackClick, handleFavorite } = this.props;
 
     return (
       
@@ -27,6 +27,7 @@ export class MovieView extends React.Component {
           <div className="movie-poster">
             <img src={movie.ImagePath} crossOrigin="true" />
           </div>
+          
           <br />
           <div className="movie-title">
             <span className="label">Title: </span>
@@ -65,6 +66,7 @@ export class MovieView extends React.Component {
           <Link to={`/genres/${movie.Genre.Name}`}>
           <Button variant="link">Genre</Button>
           </Link>
+          <Button variant="primary" onClick={() => handleFavorite(movie._id, "add")}>Favorite</Button>
        </div>
     );
   }

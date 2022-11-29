@@ -10,6 +10,7 @@ import { Row, Col, Container } from "react-bootstrap/";
 import { Menubar } from "../navbar-view/navbar";
 import { DirectorView } from "../director-view/director-view";
 import { GenreView } from "../genre-view/genre-view";
+import ProfileView from "../profile-view/profile-view";
 
 
 
@@ -25,6 +26,7 @@ export class MainView extends React.Component {
         this.state = {
           movies: [],
           selectedMovie: null,
+          favoriteMovies: [],
           user: null
         }
       }
@@ -89,6 +91,52 @@ export class MainView extends React.Component {
         });
       }
 
+      handleFavorite = (movieId, action) => {
+        const { user, favoriteMovies } = this.state;
+        const accessToken = localStorage.getItem("token");
+        const username = user;
+        if (accessToken !== null && username !== null) {
+          // Add MovieID to Favorites (local state & webserver)
+          if (action === "add") {
+            this.setState({ favoriteMovies: [...favoriteMovies, movieId] });
+            axios
+              .post(
+                `https://my-movie-flix.herokuapp.com/users/${username}/movies/${movieId}`,
+                {},
+                {
+                  headers: { Authorization: `Bearer ${accessToken}` },
+                }
+              )
+              .then((res) => {
+                console.log(`Movie added to ${username} Favorite movies`);
+                alert(`Movie added to ${username} Favorite movies`);
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
+      
+            // Remove MovieID from Favorites (local state & webserver)
+          } else if (action === "remove") {
+            this.setState({
+              favoriteMovies: favoriteMovies.filter((name) => name !== movieId),
+            });
+            axios
+              .delete(
+                `https://my-movie-flix.herokuapp.com/users/${username}/favorites/${movieId}`,
+                {
+                  headers: { Authorization: `Bearer ${accessToken}` },
+                }
+              )
+              .then((res) => {
+                console.log(`Movie removed from ${username} Favorite movies`);
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
+          }
+        }
+      };
+
 
 
     
@@ -142,7 +190,9 @@ export class MainView extends React.Component {
                 </Row> )
                   
                   return (<Col md={8}>
-                    <MovieView movie={movies.find(m => m._id === Number(match.params.id))} onBackClick={() => history.goBack()} />
+                    {/* {JSON.stringify(match)}
+                    {JSON.stringify(movies.find(m => m._id === Number(match.params.id)))} */}
+                    <MovieView handleFavorite={this.handleFavorite} movie={movies.find(m => m._id === Number(match.params.id))} onBackClick={() => history.goBack()} />
                   </Col>)
                 }} />
                
@@ -190,6 +240,9 @@ export class MainView extends React.Component {
                   <ProfileView movies={movies} user={user} onBackClick={() => history.goBack()}/>
                   </Col>)
                 }} />
+
+              
+
                
 
 
