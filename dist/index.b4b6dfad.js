@@ -41719,7 +41719,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
     }
     getUser = (token)=>{
         const Username = localStorage.getItem("user");
-        (0, _axiosDefault.default).get(`https://my-movie-flix.herokuapp.com/movies/${Username}`, {
+        (0, _axiosDefault.default).get(`https://my-movie-flix.herokuapp.com/users/${Username}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
