@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { Button, Container, Row, Col, Card, Form} from "react-bootstrap";
+import { Button, Container, Row, Col, Card, Form, Figure} from "react-bootstrap";
 
 
 export default class ProfileView extends React.Component {
@@ -37,7 +37,7 @@ export default class ProfileView extends React.Component {
   getUser = (token) => {
     const Username = localStorage.getItem("user");
     axios
-      .get(`https://my-movie-flix.herokuapp.com/users/${Username}`, {
+      .get(`https://my-movie-flix.herokuapp.com/movies/${Username}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -173,13 +173,15 @@ export default class ProfileView extends React.Component {
     const { movies } = this.props;
     const { FavoriteMovies, Username, Email, Birthday, Password } = this.state;
 
-    const myFavoritesMovies = [];
-    for (let index = 0; index < movies.length; index++) {
-      const movie = movies[index];
-      if (FavoriteMovies.includes(movie._id)) {
-        myFavoritesMovies.push(movie);
-      }
-    }
+    const myFavoritesMovies = movies ? FavoriteMovies.map(movieId =>{
+        return movies.filter(mov => mov._id === parseInt(movieId))[0]
+    }) : []
+    // for (let index = 0; index < movies.length; index++) {
+    //   const movie = movies[index];
+    //   if (FavoriteMovies.includes(movie._id)) {
+    //     myFavoritesMovies.push(movie);
+    //   }
+    // }
 
     return (
       <Container>
@@ -253,7 +255,7 @@ export default class ProfileView extends React.Component {
                 <Col key={movie._id}>
                   <Figure>
                     <Link to={`/movies/${movie._id}`}>
-                      <Figure.Image src={movie.ImagePath} alt={movie.Title} />
+                      <Figure.Image src={movie.ImagePath} alt={movie.Title} crossOrigin="true"/>
                       <Figure.Caption>{movie.Title}</Figure.Caption>
                     </Link>
                   </Figure>
@@ -263,7 +265,12 @@ export default class ProfileView extends React.Component {
             </Row>
           </Card.Body>
         </Card>
+
+        <br />
+
       </Container>
+     
+     
     );
   }
 }
