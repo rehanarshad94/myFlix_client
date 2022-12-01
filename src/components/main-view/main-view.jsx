@@ -91,6 +91,8 @@ export class MainView extends React.Component {
         });
       }
 
+    
+
       handleFavorite = (movieId, action) => {
         const { user, favoriteMovies } = this.state;
         const accessToken = localStorage.getItem("token");

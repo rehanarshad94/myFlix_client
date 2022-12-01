@@ -34,6 +34,7 @@ export default class ProfileView extends React.Component {
     window.open("/", "_self");
   }
 
+  
   getUser = (token) => {
     const Username = localStorage.getItem("user");
     axios
@@ -274,3 +275,7 @@ export default class ProfileView extends React.Component {
     );
   }
 }
+
+
+
+        
