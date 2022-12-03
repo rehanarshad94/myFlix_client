@@ -193,7 +193,6 @@ export default class ProfileView extends React.Component {
               <Card.Body>
                 <>
                   <p>Username: {Username}</p>
-                  <p>Password: {Password}</p>
                   <p>Email: {Email}</p>
                   <p>Birthday: {Birthday}</p>
                 </>
