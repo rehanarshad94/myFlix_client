@@ -147,6 +147,7 @@ export class MainView extends React.Component {
     
         return (
             <Router>
+              <Routes>
               <Menubar user={user} />
               <Container>
               <Row className="main-view justify-content-md-center">
@@ -263,6 +264,7 @@ export class MainView extends React.Component {
                 
                 </Row>
               </Container>
+              </Routes>
             </Router>
         );
       }
