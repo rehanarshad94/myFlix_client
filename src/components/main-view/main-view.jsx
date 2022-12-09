@@ -3,7 +3,7 @@ import React from "react";
 import axios from "axios";
 import { LoginView } from "../login-view/login-view";
 import { RegistrationView } from "../registration-view/registration-view";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
+import { BrowserRouter as Router, Route } from "react-router-dom"
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 import { Row, Col, Container } from "react-bootstrap/";
@@ -151,7 +151,7 @@ export class MainView extends React.Component {
               <Container>
               <Row className="main-view justify-content-md-center">
                
-               <Routes>
+               
                 <Route exact path="/" render={() => {
                   // if (!user) return (
                   // <Col>
@@ -265,7 +265,7 @@ export class MainView extends React.Component {
                   <userUpdate user={user} onBackClick={() => history.goBack()}/>
                   </Col>)
                 }} />
-                </Routes>
+                
                 
                 
                 </Row>

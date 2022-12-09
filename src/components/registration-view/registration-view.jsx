@@ -21,7 +21,7 @@ export function RegistrationView(props) {
 
     const validate = () => {
         let isReq = true;
-        if(name){
+        if(!name){
             setValues({...values, nameErr: 'Name is required'});
             isReq = false;
         }
@@ -62,11 +62,11 @@ export function RegistrationView(props) {
             }).then(response => {
                 const data = response.data;
                 console.log(data);
-                alter('Registration successful, login!');
+                alert('Registration successful, login!');
                 window.open('/', '_self');
             }).catch(response => {
                 console.error(response);
-                alter('unable to register')
+                alert('unable to register')
             });
         }
     };
@@ -97,35 +97,35 @@ return (
             <Form>
                 <h3>Sign Up</h3>
                 <p></p>
-                <Form.Group controlID="formName" className="reg-form-inputs">
+                <Form.Group controlid="formName" className="reg-form-inputs">
                     <Form.Label>Name:</Form.Label>
                     <Form.Control type="text" value={name} onChange={e => setName(e.target.value)} />
                     {values.nameErr && <p>{values.nameErr}</p>}
                 </Form.Group>
                 <br />
 
-                <Form.Group controlID="formUsername" className="reg-form-inputs">
+                <Form.Group controlid="formUsername" className="reg-form-inputs">
                     <Form.Label>Username:</Form.Label>
                     <Form.Control type="text" value={username} onChange={e => setUsername(e.target.value)} />
                     {values.usernameErr && <p>{values.usernameErr}</p>}
                 </Form.Group>
                 <br />
 
-                <Form.Group controlID="formPassword" className="reg-form-inputs">
+                <Form.Group controlid="formPassword" className="reg-form-inputs">
                     <Form.Label>Password:</Form.Label>
                     <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} />
                     {values.passwordErr && <p>{values.passwordErr}</p>}
                 </Form.Group>
                 <br />
 
-                <Form.Group controlID="formEmail" className="reg-form-inputs">
+                <Form.Group controlid="formEmail" className="reg-form-inputs">
                     <Form.Label>Email:</Form.Label>
-                    <Form.Control type="password" value={email} onChange={e => setEmail(e.target.value)} />
+                    <Form.Control type="email" value={email} onChange={e => setEmail(e.target.value)} />
                     {values.emailErr && <p>{values.emailErr}</p>}
                 </Form.Group>
                 <br />
 
-                <Form.Group controlID="updateBirthday">
+                <Form.Group controlid="updateBirthday">
                     <Form.Label>Birthday</Form.Label>
                     <Form.Control type="date" name="birthday" onChange={(e) => setBirthday(e.target.value)} />
                 </Form.Group>
