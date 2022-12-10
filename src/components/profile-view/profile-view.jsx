@@ -174,10 +174,12 @@ export default class ProfileView extends React.Component {
   render() {
     const { movies } = this.props;
     const { FavoriteMovies, Username, Email, Birthday, Password } = this.state;
-
+    console.log({FavoriteMovies: FavoriteMovies});
     const myFavoritesMovies = movies ? FavoriteMovies.map(movieId =>{
+      console.log(movieId);
         return movies.filter(mov => mov._id === parseInt(movieId))[0]
     }) : []
+    console.log(myFavoritesMovies);
     // for (let index = 0; index < movies.length; index++) {
     //   const movie = movies[index];
     //   if (FavoriteMovies.includes(movie._id)) {
