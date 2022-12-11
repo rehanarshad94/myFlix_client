@@ -42032,11 +42032,11 @@ class ProfileView extends (0, _reactDefault.default).Component {
                                         children: [
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Figure), {
                                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                                    to: `/movies/${movie._id}`,
+                                                    to: `/movies/${movie?._id}`,
                                                     children: [
                                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Figure).Image, {
-                                                            src: movie.ImagePath,
-                                                            alt: movie.Title,
+                                                            src: movie?.ImagePath,
+                                                            alt: movie?.Title,
                                                             crossOrigin: "true"
                                                         }, void 0, false, {
                                                             fileName: "src/components/profile-view/profile-view.jsx",
@@ -42044,7 +42044,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Figure).Caption, {
-                                                            children: movie.Title
+                                                            children: movie?.Title
                                                         }, void 0, false, {
                                                             fileName: "src/components/profile-view/profile-view.jsx",
                                                             lineNumber: 262,
@@ -42064,7 +42064,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                                                 variant: "secondary",
                                                 onClick: ()=>{
-                                                    this.onRemoveFavorite(movie._id);
+                                                    this.onRemoveFavorite(movie?._id);
                                                 },
                                                 children: "Remove from the list"
                                             }, void 0, false, {
@@ -42073,7 +42073,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
                                                 columnNumber: 19
                                             }, this)
                                         ]
-                                    }, movie._id, true, {
+                                    }, movie?._id, true, {
                                         fileName: "src/components/profile-view/profile-view.jsx",
                                         lineNumber: 258,
                                         columnNumber: 17

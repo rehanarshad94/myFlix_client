@@ -255,14 +255,14 @@ export default class ProfileView extends React.Component {
 
             <Row>
               {myFavoritesMovies.map((movie) => (
-                <Col key={movie._id}>
+                <Col key={movie?._id}>
                   <Figure>
-                    <Link to={`/movies/${movie._id}`}>
-                      <Figure.Image src={movie.ImagePath} alt={movie.Title} crossOrigin="true"/>
-                      <Figure.Caption>{movie.Title}</Figure.Caption>
+                    <Link to={`/movies/${movie?._id}`}>
+                      <Figure.Image src={movie?.ImagePath} alt={movie?.Title} crossOrigin="true"/>
+                      <Figure.Caption>{movie?.Title}</Figure.Caption>
                     </Link>
                   </Figure>
-                  <Button variant="secondary" onClick={()=>{this.onRemoveFavorite(movie._id)}}>Remove from the list</Button>
+                  <Button variant="secondary" onClick={()=>{this.onRemoveFavorite(movie?._id)}}>Remove from the list</Button>
                 </Col>
               ))}
             </Row>
