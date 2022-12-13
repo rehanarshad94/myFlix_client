@@ -28,14 +28,14 @@ export function RegistrationView(props) {
         if (!username){
             setValues({...values, usernameErr: 'Username is required'});
             isReq = false;
-        } else if (username.length > 5){
+        } else if (username.length ){
             setValues({...values, usernameErr: 'Username must be 5 characters long'});
             isReq = false;
         }
         if (!password) {
             setValues({...values, passwordErr: 'Password Required'});
             isReq = false;
-        } else if (password .length < 6){
+        } else if (password .length ){
             setValues({...values, passwordErr: 'Password must be 6 characters long'});
             isReq = false;
         } if (!email) {
@@ -71,23 +71,6 @@ export function RegistrationView(props) {
         }
     };
 
-    // const handleRegister = (e) => {
-    //     e.preventDefault();
-    //     axios.post('https://my-movie-flix.herokuapp.com/users', {
-    //         Username: username,
-    //         Password: password,
-    //         Email: email,
-    //         Birthday: birthday
-    //     })
-    //     .then(response => {
-    //         const data = response.data;
-    //         console.log(data);
-    //         window.open('/', '_self'); // the second argument '_self' is necessary so that the page will open in the current tab
-    //     })
-    //     .catch(e => {
-    //         console.log('error registering the user')
-    //     });
-    // };
 
 
 

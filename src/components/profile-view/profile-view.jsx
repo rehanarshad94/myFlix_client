@@ -180,12 +180,6 @@ export default class ProfileView extends React.Component {
         return movies.filter(mov => mov._id === parseInt(movieId))[0]
     }) : []
     console.log(myFavoritesMovies);
-    // for (let index = 0; index < movies.length; index++) {
-    //   const movie = movies[index];
-    //   if (FavoriteMovies.includes(movie._id)) {
-    //     myFavoritesMovies.push(movie);
-    //   }
-    // }
 
     return (
       <Container>

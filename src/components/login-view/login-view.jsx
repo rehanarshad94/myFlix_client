@@ -7,19 +7,9 @@ import { Link } from "react-router-dom";
 export function LoginView(props) {
   const [ username, setUsername ] = useState('');
   const [ password, setPassword ] = useState('');
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log(username, password);
-  //   /* Send a request to the server for authentication */
-  //   /* then call props.onLoggedIn(username) */
-  //   props.onLoggedIn(username);
-  // };
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    /* Send a request to the server for authentication */
-    /* had to add /login?Username=rehanarshd94&Password=password1234 to make connection work; did not work with /login*/
     axios.post(`https://my-movie-flix.herokuapp.com/login?Username=${username}&Password=${password}`, {
       Username: username,
       Password: password

@@ -153,10 +153,6 @@ export class MainView extends React.Component {
                
                
                 <Route exact path="/" render={() => {
-                  // if (!user) return (
-                  // <Col>
-                  // <LoginView movies={movies} onLoggedIn={user => this.onLoggedIn(user)} />
-                  // </Col> )
                   if (!user) return ( <Row>
                   <Col>
                  <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
@@ -196,8 +192,6 @@ export class MainView extends React.Component {
                 </Row> )
                   
                   return (<Col md={8}>
-                    {/* {JSON.stringify(match)}
-                    {JSON.stringify(movies.find(m => m._id === Number(match.params.id)))} */}
                     <MovieView handleFavorite={this.handleFavorite} movie={movies.find(m => m._id === Number(match.params.id))} onBackClick={() => history.goBack()} />
                   </Col>)
                 }} />
