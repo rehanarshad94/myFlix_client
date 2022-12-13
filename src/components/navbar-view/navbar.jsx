@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
 
-export function Menubar() {
+export function Menubar({user}) {
     
 const onLoggedOut = () => {
     localStorage.clear();
@@ -27,7 +27,7 @@ return (
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="ml-auto">
                     {isAuth() && (
-                        <Nav.Link href={'/users/${user}'}>Profile</Nav.Link>
+                        <Nav.Link href={`/users/${user}`}>Profile</Nav.Link>
                     )}
                     {isAuth() && (
                         <Button variant="link" onClick={ () => {
